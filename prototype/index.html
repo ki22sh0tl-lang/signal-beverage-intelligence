@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Signal · 饮品情报工作台</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/collector.css">
+</head>
+<body data-variant="c">
+  <aside class="sidebar">
+    <a class="logo" href="/" aria-label="Signal 首页"><span class="mark">S</span> signal<span class="dot">.</span></a>
+    <div class="workspace">个人工作区 <span>DEMO</span></div>
+    <p class="nav-title">洞察工作流</p>
+    <nav id="nav">
+      <button data-page="overview" class="active"><span>◫</span> 工作概览</button>
+      <button data-page="collection"><span>◎</span> 数据采集</button>
+      <button data-page="review"><span>▤</span> 内容复核 <b id="pending-badge">10</b></button>
+      <button data-page="report"><span>◷</span> 洞察报告</button>
+      <button data-page="method"><span>⌘</span> 数据与方法</button>
+    </nav>
+    <div class="side-bottom"><div class="status-dot"></div> 本地演示环境<p>把碎片信息，变成业务判断。</p><div class="profile"><span>AS</span><div>个人项目<small>FDE Portfolio Lab</small></div></div></div>
+  </aside>
+  <div class="shell">
+    <header><div>工作区 <span>/</span> 饮品行业观察</div><div class="header-right"><span class="live">● 演示数据</span><button id="reset" class="quiet">重置演示 ↻</button></div></header>
+    <main id="main"></main>
+    <footer>Signal Lab · 独立演示项目 <span>虚构案例 · 人工复核 · DeepSeek 可选分析</span></footer>
+  </div>
+  <dialog id="detail"><div id="detail-content"></div><form method="dialog"><button class="primary">关闭详情</button></form></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="/papa.js"></script>
+  <script src="/collector.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

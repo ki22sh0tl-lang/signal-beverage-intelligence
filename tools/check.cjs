@@ -1,0 +1,16 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const { convert } = require('./import-radar.cjs');
+const csv = fs.readFileSync('examples/notes.csv', 'utf8');
+const d = convert(csv);
+assert.equal(d.summary.likes, 2300);
+assert.equal(d.brandActions.length, 2);
+assert.equal(d.brandActions[0].metrics.likes, 1500);
+assert.equal(d.summary.moduleSummary['联名'].likes, 1500);
+assert.equal(d.summary.moduleSummary['活动'].likes, 1200);
+assert.equal(d.notes[1].content.title, '示例帖子二，含逗号');
+assert.throws(() => convert(csv.replace('demo-2', 'demo-1')), /重复笔记/);
+assert.throws(() => convert(csv.replace(',1200,', ',-1,')), /非法点赞/);
+assert.throws(() => convert(csv.replace('2026-09-07', '2026-02-30')), /非法发布日期/);
+assert.throws(() => convert(csv.replace('示例品牌A,示例玩偶联名,"示例帖子二', '示例品牌B,示例玩偶联名,"示例帖子二')), /冲突/);
+console.log('检查通过：归并、多标签统计、CSV引用、重复ID、非法值与动作冲突。');

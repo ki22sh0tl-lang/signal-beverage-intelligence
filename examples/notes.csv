@@ -1,0 +1,4 @@
+note_id,action_id,brand,action_name,title,published_date,likes,likes_captured_at,modules,peripherals,source_account,source_type,url
+demo-1,demo-action-a,示例品牌A,示例玩偶联名,示例帖子一,2026-09-07,1200,2026-09-15T12:00:00+08:00,联名|活动,玩偶,示例账号,行业资讯,https://www.xiaohongshu.com/
+demo-2,demo-action-a,示例品牌A,示例玩偶联名,"示例帖子二，含逗号",2026-09-08,300,2026-09-15T12:00:00+08:00,联名,玩偶,示例账号,美食达人,https://www.xiaohongshu.com/
+demo-3,demo-action-b,示例品牌B,示例果茶新品,示例帖子三,2026-09-09,800,2026-09-15T12:00:00+08:00,新品,,示例账号,美食达人,https://www.xiaohongshu.com/

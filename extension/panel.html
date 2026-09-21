@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Signal 采集队列</title>
+  <link rel="stylesheet" href="panel.css">
+  <style>.settings{margin:12px 16px 0;padding:10px 12px;background:#fff;border:1px solid #d9deea}.settings summary{cursor:pointer;font-size:12px;font-weight:800}.settings label{display:block;margin-top:9px;color:#65739a;font-size:10px}.settings input{width:100%;margin-top:4px;padding:8px;border:1px solid #c4ccdc;color:#10245a;font:11px system-ui}.settings button{width:100%;margin-top:9px}</style>
+</head>
+<body>
+  <header><div><span class="mark">S</span><strong>Signal 采集助手</strong></div><small id="status">点击后才采集</small></header>
+  <main>
+    <section class="hero"><div><p class="eyebrow">CAPTURE QUEUE</p><h1>把看到的线索先留下。</h1><p>打开小红书笔记后，点击“采集当前页”加入本地队列；你可以批量同步到工作台。</p></div><strong id="count">0 条</strong></section>
+    <details class="settings"><summary>工作台连接</summary><label>工作台地址<input id="workbench-url" type="url" placeholder="https://你的站点.onrender.com"></label><label>采集口令<input id="capture-token" type="password" autocomplete="off" placeholder="Render 中的 CAPTURE_TOKEN"></label><button id="save-settings">保存连接</button></details>
+    <div class="actions"><button id="capture">采集当前页</button><button id="sync" class="primary">同步到工作台</button><button id="export">导出 CSV</button><button id="clear">清空队列</button></div>
+    <section id="empty" class="empty">还没有收集到笔记。打开小红书单篇笔记后点击采集。</section>
+    <section id="list"></section>
+  </main>
+  <footer>本地队列 · 不读取 Cookie · 只发送你主动采集的页面字段</footer>
+  <script src="panel.js"></script>
+</body>
+</html>

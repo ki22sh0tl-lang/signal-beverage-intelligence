@@ -1,0 +1,211 @@
+{
+  "keys": [
+    "meta",
+    "summary",
+    "editorial",
+    "brandActions",
+    "notes",
+    "unassignedNotes"
+  ],
+  "meta": {
+    "schemaVersion": "2.0.0",
+    "generatedAt": "2026-08-19T08:47:19.455Z",
+    "platform": "小红书",
+    "market": "中国大陆",
+    "reportWeeks": [
+      "2026W32"
+    ],
+    "reportPeriod": {
+      "start": "2026-08-03",
+      "end": "2026-08-09"
+    },
+    "source": {
+      "workbook": "02_数据处理/饮品热点雷达_分析标签大宽表_2026W32.xlsx",
+      "worksheet": "分析标签大宽表",
+      "headerRow": 4,
+      "likesCaptureRange": {
+        "start": "2026-08-18T15:42:11.000+08:00",
+        "end": "2026-08-18T16:18:00.000+08:00"
+      },
+      "otherMetricsCaptureRange": {
+        "start": "2026-08-14T10:07:39.999+08:00",
+        "end": "2026-08-18T15:42:11.000+08:00"
+      },
+      "duplicateNoteIds": []
+    },
+    "scope": {
+      "includedSourceTypes": [
+        "行业资讯",
+        "美食达人"
+      ],
+      "excludedSourceTypes": [
+        "品牌官方"
+      ],
+      "monitoredAccountCount": 8
+    },
+    "metricDefinitions": {
+      "heat": "单篇点赞数；所有排行、份额和爆款判断均只使用点赞",
+      "viralNote": "单篇点赞数大于等于1000",
+      "brandAction": "按品牌动作ID归并同一市场动作的多篇外部内容",
+      "module": "新品、联名、活动为可并存观察标签；品牌动作另设互斥主分类，默认优先级为联名>新品>活动，复合动作经人工复核后可覆盖"
+    },
+    "taxonomyRules": {
+      "productLaunch": [
+        "新品上线",
+        "新品回归"
+      ],
+      "beverageCategory": "果汁/果饮并入果茶；瓶装轻乳茶单列",
+      "fruitStrategy": "季节性、熟悉度和组合方式分开；本期未使用未经业务确认的水果熟悉度判断，原帖无证据时保持空值",
+      "collabPackaging": [
+        "联名杯",
+        "杯套",
+        "纸袋",
+        "小票"
+      ],
+      "collabPeripherals": [
+        "吧唧",
+        "小卡",
+        "透卡",
+        "冰箱贴",
+        "保温杯",
+        "挂件"
+      ],
+      "activityOverride": "区域限定周边发布按活动处理；本期人工复核命中杏花村冰箱贴",
+      "primaryModuleOverride": "霸王茶姬宠物季同时包含上新与活动；本期按活动作为主分类，新品作为次级观察标签",
+      "evidence": "仅依据标题、正文、话题和已有标签；未读取图片时不补推断"
+    },
+    "constraints": [
+      "固定外部账号观察池样本，不代表小红书全平台市场份额",
+      "全部52篇内容的点赞已统一刷新至2026年8月18日；收藏与评论保留原截点，仅作原始明细，不参与热度计算",
+      "点赞表现只反映截取时点的外部内容响应，不等于曝光、销量、投放效率或ROI",
+      "三类观察标签可并存，模块数量不可直接相加",
+      "当前为AI文本复核版，关键标签仍需业务确认"
+    ]
+  },
+  "summary": {
+    "eligibleNoteCount": 52,
+    "mappedNoteCount": 48,
+    "unassignedNoteCount": 4,
+    "brandActionCount": 29,
+    "likes": 33288,
+    "averageLikes": 640.1538461538462,
+    "medianLikes": 438,
+    "viralNoteCount": 14,
+    "viralRate": 0.2692307692307692,
+    "topFiveActionLikes": 17992,
+    "topFiveActionShare": 0.5404950732996876,
+    "moduleSummary": {
+      "新品": {
+        "noteCount": 18,
+        "likes": 18965,
+        "averageLikes": 1053.611111111111,
+        "medianLikes": 953,
+        "viralNoteCount": 9,
+        "viralRate": 0.5,
+        "top1ShareLikes": 0.25895069865541787,
+        "actionCount": 14
+      },
+      "联名": {
+        "noteCount": 12,
+        "likes": 4926,
+        "averageLikes": 410.5,
+        "medianLikes": 432,
+        "viralNoteCount": 0,
+        "viralRate": 0,
+        "top1ShareLikes": 0.17945594803085668,
+        "actionCount": 8
+      },
+      "活动": {
+        "noteCount": 27,
+        "likes": 9682,
+        "averageLikes": 358.5925925925926,
+        "medianLikes": 141,
+        "viralNoteCount": 3,
+        "viralRate": 0.1111111111111111,
+        "top1ShareLikes": 0.1992356951043173,
+        "actionCount": 17
+      }
+    }
+  },
+  "counts": {
+    "notes": 52,
+    "actions": 29,
+    "likesRecalculated": 33288
+  },
+  "noteKeys": [
+    "id",
+    "sourceRow",
+    "reportWeek",
+    "brand",
+    "source",
+    "publishedAt",
+    "publishedDate",
+    "content",
+    "metrics",
+    "link",
+    "capturedAt",
+    "observation",
+    "classification",
+    "directions",
+    "product",
+    "collaboration",
+    "engagement",
+    "promotion",
+    "canonicalLink",
+    "unassignedReason",
+    "analysis"
+  ],
+  "actionKeys": [
+    "id",
+    "name",
+    "status",
+    "primaryBrand",
+    "brands",
+    "modules",
+    "primaryModule",
+    "noteIds",
+    "representativeNoteId",
+    "publishedDateRange",
+    "metrics",
+    "moduleMetrics",
+    "sourceTypes",
+    "sourceAccounts",
+    "product",
+    "collaboration",
+    "activity",
+    "insight"
+  ],
+  "files": [
+    {
+      "file": "index.html",
+      "bytes": 15242
+    },
+    {
+      "file": "app.js",
+      "bytes": 41227
+    },
+    {
+      "file": "styles.css",
+      "bytes": 51786
+    },
+    {
+      "file": "report-data.js",
+      "bytes": 283582
+    },
+    {
+      "file": "xlsx-export.js",
+      "bytes": 12205
+    }
+  ],
+  "toyActions": [
+    {
+      "id": "2026W32-X15",
+      "name": "Pingu",
+      "modules": [
+        "联名",
+        "活动"
+      ],
+      "notes": 2
+    }
+  ]
+}

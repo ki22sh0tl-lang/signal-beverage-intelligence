@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Signal 采集助手",
+  "version": "0.2.0",
+  "description": "把当前小红书笔记发送到本机 Signal 工作台。",
+  "permissions": ["activeTab", "scripting", "storage", "tabs", "sidePanel"],
+  "host_permissions": ["http://127.0.0.1:4173/*", "https://www.xiaohongshu.com/*", "https://xiaohongshu.com/*"],
+  "optional_host_permissions": ["https://*/*"],
+  "background": {"service_worker": "background.js"},
+  "side_panel": {"default_path": "panel.html"},
+  "action": {"default_title": "打开 Signal 采集助手"}
+}

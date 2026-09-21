@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "热点雷达 FDE 作品版：业务与系统框架",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [1240, 760],
+    "views": [
+      {
+        "id": "delivery-loop",
+        "label": "端到端交付链路",
+        "focus": ["source", "import", "ai", "review", "model", "metrics", "report", "visitor"],
+        "note": "从公开或模拟数据进入，到生成可演示、可追溯的行业洞察。"
+      },
+      {
+        "id": "human-in-loop",
+        "label": "人机协作",
+        "focus": ["ai", "review", "evidence", "model"],
+        "note": "AI 提议标签与归并，人负责最终业务判断，证据全程保留。"
+      },
+      {
+        "id": "portfolio-story",
+        "label": "简历展示面",
+        "focus": ["metrics", "report", "case", "visitor"],
+        "note": "同时展示商业问题、数据口径、工作流提效和最终报告。"
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "source",
+      "type": "external",
+      "label": "公开／模拟帖子数据",
+      "sublabel": "CSV / Excel · 帖子链接与指标截点",
+      "pos": [25, 315],
+      "size": [165, 76]
+    },
+    {
+      "id": "import",
+      "type": "backend",
+      "label": "导入与质量检查",
+      "sublabel": "字段校验 · 去重 · 口径冻结",
+      "pos": [215, 315],
+      "size": [165, 76]
+    },
+    {
+      "id": "ai",
+      "type": "backend",
+      "label": "AI 分析助手",
+      "sublabel": "实体提取 · 标签建议 · 动作候选",
+      "tag": "建议，不直接发布",
+      "pos": [405, 205],
+      "size": [180, 82]
+    },
+    {
+      "id": "review",
+      "type": "security",
+      "label": "人工复核台",
+      "sublabel": "合并 / 拆分 · 修正标签 · 确认主分类",
+      "tag": "质量闸门",
+      "pos": [405, 420],
+      "size": [180, 82]
+    },
+    {
+      "id": "evidence",
+      "type": "database",
+      "label": "证据与版本记录",
+      "sublabel": "原文片段 · 指标时间 · 修改原因",
+      "pos": [615, 70],
+      "size": [180, 76]
+    },
+    {
+      "id": "model",
+      "type": "database",
+      "label": "品牌动作数据集",
+      "sublabel": "帖子 → 动作 → 新品 / 联名 / 活动",
+      "pos": [615, 315],
+      "size": [180, 82]
+    },
+    {
+      "id": "metrics",
+      "type": "backend",
+      "label": "确定性指标引擎",
+      "sublabel": "排行 · 份额 · 千赞率 · 跨周变化",
+      "pos": [820, 205],
+      "size": [180, 82]
+    },
+    {
+      "id": "report",
+      "type": "frontend",
+      "label": "行业洞察报告",
+      "sublabel": "决策摘要 · 趋势证据 · 案例库",
+      "tag": "主要交付物",
+      "pos": [1040, 205],
+      "size": [170, 82]
+    },
+    {
+      "id": "case",
+      "type": "frontend",
+      "label": "FDE 项目说明",
+      "sublabel": "业务问题 · 架构取舍 · 提效结果",
+      "tag": "简历入口",
+      "pos": [820, 475],
+      "size": [180, 82]
+    },
+    {
+      "id": "visitor",
+      "type": "external",
+      "label": "面试官 / 业务方",
+      "sublabel": "浏览报告并追溯结论",
+      "pos": [1040, 475],
+      "size": [170, 82]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "本地优先的数据生产工作区",
+      "wraps": ["import", "ai", "review", "evidence", "model", "metrics"]
+    }
+  ],
+  "connections": [
+    {
+      "id": "source-import",
+      "from": "source",
+      "to": "import",
+      "label": "批量导入",
+      "variant": "emphasis",
+      "labelAt": [203, 405]
+    },
+    {
+      "id": "import-ai",
+      "from": "import",
+      "to": "ai",
+      "label": "规范化帖子",
+      "variant": "emphasis",
+      "labelAt": [378, 301]
+    },
+    {
+      "id": "ai-review",
+      "from": "ai",
+      "to": "review",
+      "label": "待确认建议",
+      "variant": "security",
+      "labelAt": [495, 301]
+    },
+    {
+      "id": "review-model",
+      "from": "review",
+      "to": "model",
+      "label": "发布已复核动作",
+      "variant": "emphasis",
+      "labelAt": [660, 411]
+    },
+    {
+      "id": "ai-evidence",
+      "from": "ai",
+      "to": "evidence",
+      "label": "保存提取证据",
+      "variant": "dashed",
+      "labelAt": [670, 165]
+    },
+    {
+      "id": "review-evidence",
+      "from": "review",
+      "to": "evidence",
+      "label": "记录修改原因",
+      "variant": "dashed",
+      "labelAt": [675, 286]
+    },
+    {
+      "id": "model-metrics",
+      "from": "model",
+      "to": "metrics",
+      "label": "结构化统计",
+      "variant": "emphasis",
+      "labelAt": [808, 301]
+    },
+    {
+      "id": "metrics-report",
+      "from": "metrics",
+      "to": "report",
+      "label": "指标与洞察证据",
+      "variant": "emphasis",
+      "labelAt": [1010, 301]
+    },
+    {
+      "id": "metrics-case",
+      "from": "metrics",
+      "to": "case",
+      "label": "质量 / 效率指标",
+      "variant": "dashed",
+      "labelAt": [910, 301]
+    },
+    {
+      "id": "report-visitor",
+      "from": "report",
+      "to": "visitor",
+      "label": "交互浏览",
+      "variant": "emphasis",
+      "labelAt": [1125, 301]
+    },
+    {
+      "id": "case-visitor",
+      "from": "case",
+      "to": "visitor",
+      "label": "解释方案与结果",
+      "variant": "dashed",
+      "labelAt": [1010, 571]
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "保留原网页的强项",
+      "items": [
+        "新品 / 联名 / 活动的业务分层",
+        "品牌动作归并与原帖证据",
+        "筛选、排行、详情抽屉和可分享链接"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "建议新增",
+      "items": [
+        "AI 建议 + 人工复核，并记录证据与指标截点",
+        "跨周变化、提效结果与 FDE 项目说明"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "建议收缩",
+      "items": [
+        "首页减少重复结论；公司宣传移出核心分析路径",
+        "第一版不做登录、多租户、实时爬虫和重型后台"
+      ]
+    }
+  ]
+}

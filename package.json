@@ -1,0 +1,18 @@
+{
+  "name": "drink-radar-data-kit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Minimal CSV to brand-action radar data pipeline",
+  "scripts": {
+    "start": "node prototype/server.cjs",
+    "import": "node tools/import-radar.cjs",
+    "check": "node tools/check.cjs",
+    "check:ui": "node prototype/extractor-check.cjs && node prototype/browser-check.cjs",
+    "demo": "node tools/import-radar.cjs examples/notes.csv output/report.json"
+  },
+  "dependencies": {
+    "docx": "^9.7.1",
+    "papaparse": "^5.7.0",
+    "playwright": "^1.63.0"
+  }
+}
