@@ -1,0 +1,10 @@
+@keyframes signal-rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes signal-float{0%,100%{transform:rotate(1.5deg) translateY(0)}50%{transform:rotate(1.5deg) translateY(-8px)}}
+@keyframes signal-page-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes signal-fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes signal-pulse{0%,100%{box-shadow:0 0 0 0 #0f725800}50%{box-shadow:0 0 0 6px #0f72581c}}
+main{animation:signal-page-in .55s cubic-bezier(.2,.7,.2,1) both}
+.hero-copy>*{animation:signal-rise .6s cubic-bezier(.2,.7,.2,1) both}.hero-copy>*:nth-child(2){animation-delay:.08s}.hero-copy>*:nth-child(3){animation-delay:.16s}.hero-copy>*:nth-child(4){animation-delay:.24s}.hero-copy>*:nth-child(5){animation-delay:.3s}
+.signal-card{animation:signal-float 5s ease-in-out infinite;will-change:transform}.workflow li{animation:signal-rise .65s cubic-bezier(.2,.7,.2,1) both}.workflow li:nth-child(2){animation-delay:.08s}.workflow li:nth-child(3){animation-delay:.16s}.workflow li:nth-child(4){animation-delay:.24s}.proof-copy,.proof-grid{animation:signal-rise .7s .18s cubic-bezier(.2,.7,.2,1) both}
+.shell .panel,.shell .stat,.shell .review-panel,.shell .report-chapter{animation:signal-rise .45s cubic-bezier(.2,.7,.2,1) both}.shell .stat:nth-child(2){animation-delay:.06s}.shell .stat:nth-child(3){animation-delay:.12s}.shell .stat:nth-child(4){animation-delay:.18s}.rank-track span{transform-origin:left center;animation:signal-fill .9s .2s cubic-bezier(.2,.7,.2,1) both}.live::before{animation:signal-pulse 2.4s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}

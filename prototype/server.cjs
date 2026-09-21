@@ -19,7 +19,7 @@ const DEEPSEEK_PROMPT = `你是饮品行业情报分析师。只依据用户提�
 2. ...`;
 let captureSequence = 0;
 const captureQueue = [];
-const files = { '/app': ['index.html','text/html'], '/app/': ['index.html','text/html'], '/privacy': ['privacy.html','text/html'], '/landing.css':['landing.css','text/css'], '/app.js':['app.js','text/javascript'], '/style.css':['style.css','text/css'], '/sample.csv':['sample.csv','text/csv'], '/papa.js':['../node_modules/papaparse/papaparse.min.js','text/javascript'] };
+const files = { '/app': ['index.html','text/html'], '/app/': ['index.html','text/html'], '/privacy': ['privacy.html','text/html'], '/landing.css':['landing.css','text/css'], '/motion.css':['motion.css','text/css'], '/app.js':['app.js','text/javascript'], '/style.css':['style.css','text/css'], '/sample.csv':['sample.csv','text/csv'], '/papa.js':['../node_modules/papaparse/papaparse.min.js','text/javascript'] };
 files['/collector.js']=['collector.js','text/javascript'];
 files['/collector.css']=['collector.css','text/css'];
 http.createServer(async (req,res) => {
