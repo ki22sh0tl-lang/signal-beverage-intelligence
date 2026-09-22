@@ -1,5 +1,5 @@
 @keyframes signal-rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-@keyframes signal-float{0%,100%{transform:rotate(1.5deg) translateY(0)}50%{transform:rotate(1.5deg) translateY(-8px)}}
+@keyframes signal-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 @keyframes signal-page-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @keyframes signal-fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes signal-pulse{0%,100%{box-shadow:0 0 0 0 #0f725800}50%{box-shadow:0 0 0 6px #0f72581c}}

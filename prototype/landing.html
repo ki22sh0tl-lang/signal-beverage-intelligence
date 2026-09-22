@@ -11,8 +11,8 @@
   <meta property="og:title" content="Signal 饮品行业情报工作台">
   <meta property="og:description" content="把分散的社媒内容，变成可复核、可解释、可交付的业务判断。">
   <meta property="og:url" content="{{ORIGIN}}/">
-  <link rel="stylesheet" href="/landing.css">
-  <link rel="stylesheet" href="/motion.css">
+  <link rel="stylesheet" href="/landing.css?v=nebula-1">
+  <link rel="stylesheet" href="/motion.css?v=nebula-1">
 </head>
 <body>
   <header class="topbar">
@@ -21,21 +21,27 @@
   </header>
   <main>
     <section class="hero">
+      <canvas id="signal-nebula" class="nebula-canvas" aria-hidden="true"></canvas>
       <div class="hero-copy">
-        <p class="kicker">FDE PORTFOLIO · BEVERAGE INTELLIGENCE</p>
+        <p class="kicker">饮品行业情报工作台</p>
         <h1>把社媒噪声，<br>变成能交付的判断。</h1>
         <p class="lede">采集笔记、人工复核证据、归入观察集合，再生成带口径说明的行业洞察。一个从数据入口走到业务报告的完整闭环。</p>
         <div class="hero-actions"><a class="button primary" href="/app">打开在线演示</a><a class="button secondary" href="#workflow">查看方法</a></div>
         <p class="fine">独立演示项目 · 模拟数据 · API Key 仅保存在当前会话</p>
       </div>
-      <div class="signal-card" aria-label="示例情报卡片">
-        <div class="card-top"><span>本周信号</span><strong>01 / 03</strong></div>
-        <p class="card-label">新品观察</p>
-        <h2>桂花风味进入<br>秋季新品高频叙事</h2>
-        <div class="metric"><span>已复核内容</span><b>5</b></div>
-        <div class="metric"><span>品牌动作</span><b>3</b></div>
-        <div class="metric"><span>累计点赞</span><b>6,258</b></div>
-        <div class="pulse"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="nebula-stage" aria-label="由社媒内容汇聚成业务信号的动态示意">
+        <p class="nebula-caption"><i></i>50 条模拟内容正在聚合</p>
+        <div class="signal-card">
+          <div class="card-top"><span>实时信号</span><strong>18 个动作</strong></div>
+          <p class="card-label">当前最强信号</p>
+          <h2>联名从“露出”走向<br>产品、周边与互动闭环</h2>
+          <div class="metric"><span>已识别品牌</span><b>9</b></div>
+          <div class="metric"><span>观察模块</span><b>3</b></div>
+          <div class="metric"><span>证据状态</span><b>待复核</b></div>
+        </div>
+        <span class="orbit-label orbit-label-a">采集</span>
+        <span class="orbit-label orbit-label-b">归并</span>
+        <span class="orbit-label orbit-label-c">洞察</span>
       </div>
     </section>
 
@@ -60,5 +66,6 @@
     </section>
   </main>
   <footer><div><a class="brand" href="/"><span>S</span>signal<b>.</b></a><p>饮品行业社媒情报工作台</p></div><div><p>独立作品集项目，演示数据均为虚构。</p><a href="/privacy">数据与隐私说明</a></div></footer>
+  <script src="/landing-nebula.js?v=1"></script>
 </body>
 </html>
