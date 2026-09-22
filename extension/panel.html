@@ -11,7 +11,7 @@
   <header><div><span class="mark">S</span><strong>Signal 采集助手</strong></div><small id="status">点击后才采集</small></header>
   <main>
     <section class="hero"><div><p class="eyebrow">CAPTURE QUEUE</p><h1>把看到的线索先留下。</h1><p>打开小红书笔记后，点击“采集当前页”加入本地队列；你可以批量同步到工作台。</p></div><strong id="count">0 条</strong></section>
-    <details class="settings"><summary>工作台连接</summary><label>工作台地址<input id="workbench-url" type="url" placeholder="https://你的站点.onrender.com"></label><label>采集口令<input id="capture-token" type="password" autocomplete="off" placeholder="Render 中的 CAPTURE_TOKEN"></label><button id="save-settings">保存连接</button></details>
+    <details class="settings"><summary>工作台连接</summary><label>工作台地址<input id="workbench-url" type="url" placeholder="https://你的站点.onrender.com"></label><label>采集口令<input id="capture-token" type="password" autocomplete="off" placeholder="Render 中的 CAPTURE_TOKEN"></label><button id="save-settings">保存连接</button><small>线上使用时填公开 HTTPS 地址，并填写 Render 环境变量中的 CAPTURE_TOKEN；本机演示可保留默认地址。</small></details>
     <div class="actions"><button id="capture">采集当前页</button><button id="sync" class="primary">同步到工作台</button><button id="export">导出 CSV</button><button id="clear">清空队列</button></div>
     <section id="empty" class="empty">还没有收集到笔记。打开小红书单篇笔记后点击采集。</section>
     <section id="list"></section>
