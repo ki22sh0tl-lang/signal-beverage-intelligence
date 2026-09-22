@@ -58,8 +58,9 @@ const {chromium}=require('playwright');
     await page.reload();
     await page.locator('[data-page="review"]').click();
     await page.locator('[data-run]').click();
-    for(let i=0;i<10;i++){
+    for(let i=0;i<60;i++){
       const reason=page.locator('#review-form input[name="reason"]');
+      if(await reason.isDisabled())break;
       if(await reason.getAttribute('required')!==null)await reason.fill('已核对原文与分类。');
       if(await page.locator('#review-form input[name="modules"]:checked').count())await page.locator('#review-form button[type="submit"]').click();
       else{await reason.fill('无明确市场动作，排除。');await page.locator('[data-exclude]').click();}

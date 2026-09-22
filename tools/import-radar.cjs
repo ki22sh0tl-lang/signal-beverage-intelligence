@@ -46,7 +46,7 @@ function convert(csv, source = 'CSV') {
     collaboration: { peripherals: [...new Set(group.flatMap(n => n.collaboration.peripherals))] }
   })).sort((a,b) => b.metrics.likes - a.metrics.likes);
   return { meta: { schemaVersion: 'radar-kit-0.1', generatedAt: new Date().toISOString(), source,
-    constraints: ['数据来自导入表，非实时采集；模块可重叠；示例文件为虚构数据。'] },
+    constraints: ['数据来自导入表，非实时采集；模块可重叠；内置样本为基于公开活动模式生成的合成数据，不代表品牌事实。'] },
     summary: { ...metrics(notes), brandActionCount: brandActions.length,
       moduleSummary: Object.fromEntries(allowedModules.map(m => [m, metrics(notes.filter(n => n.modules.includes(m)))])) }, brandActions, notes };
 }
