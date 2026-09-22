@@ -5,6 +5,7 @@ const { Document, Packer, Paragraph, TextRun, HeadingLevel, Table, TableRow, Tab
 const { convert } = require('../tools/import-radar.cjs');
 const PORT = Number(process.env.PORT) || 4173;
 const CAPTURE_TOKEN = String(process.env.CAPTURE_TOKEN || '');
+const IMPORT_LIMIT = 10 * 1024 * 1024;
 const DEEPSEEK_PROMPT = `你是饮品行业情报分析师。只依据用户提供的已复核样本和统计结果，不补充外部事实，不把点赞解释为销量、市场份额或真实消费偏好。样本不足时必须明确指出。请使用简体中文，控制在 700 字以内，并严格按以下纯文本结构输出：
 核心判断
 1. ...
@@ -114,7 +115,7 @@ http.createServer(async (req,res) => {
       return send(200,'application/json; charset=utf-8',JSON.stringify({analysis,model:'deepseek-flash'}));
     }
     if(req.method === 'POST' && url.pathname === '/api/report') {
-      let body = ''; for await(const chunk of req) { body += chunk; if(Buffer.byteLength(body)>1024*1024) return send(413,'application/json; charset=utf-8',JSON.stringify({error:'文件上限为 1 MB'})); }
+      let body = ''; for await(const chunk of req) { body += chunk; if(Buffer.byteLength(body)>IMPORT_LIMIT) return send(413,'application/json; charset=utf-8',JSON.stringify({error:'文件上限为 10 MB'})); }
       return send(200,'application/json; charset=utf-8',JSON.stringify(convert(body,'demo 已复核数据')));
     }
     if(req.method === 'POST' && url.pathname === '/api/report.docx') {
