@@ -58,6 +58,11 @@ const {chromium}=require('playwright');
     await page.reload();
     await page.locator('[data-page="review"]').click();
     await page.locator('[data-run]').click();
+    await page.locator('[data-bulk-confirm]').click();
+    const bulkSnapshot=await page.evaluate(()=>JSON.parse(localStorage.getItem('signal-review-v1')));
+    assert.equal(bulkSnapshot.notes.length,50);
+    assert.equal(bulkSnapshot.notes.filter(n=>n.status==='approved').length,50);
+    assert.equal(bulkSnapshot.notes.filter(n=>n.locked).length,50);
     for(let i=0;i<60;i++){
       const reason=page.locator('#review-form input[name="reason"]');
       if(await reason.isDisabled())break;
