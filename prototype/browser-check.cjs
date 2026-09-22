@@ -82,6 +82,7 @@ const {chromium}=require('playwright');
     await page.locator('#deepseek-key').fill('sk-test-only');
     await page.locator('[data-ai-analyze]').click();
     await page.locator('.ai-result').waitFor();
+    await page.locator('.ai-result summary').click();
     assert((await page.locator('.ai-result').innerText()).includes('当前样本已完成复核'));
     assert.equal(await page.evaluate(()=>sessionStorage.getItem('signal-deepseek-key')),'sk-test-only');
     assert.equal(await page.evaluate(()=>localStorage.getItem('signal-review-v1').includes('sk-test-only')),false);

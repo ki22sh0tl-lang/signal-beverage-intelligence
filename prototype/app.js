@@ -36,6 +36,66 @@ const badge=(s,c='')=>`<span class="tag ${c}">${esc(s)}</span>`;
 const REVIEW_KEY='signal-review-v1';
 const DEEPSEEK_KEY='signal-deepseek-key';
 const SAMPLE_REV='sample-50-v1';
+const DEMO_AI_ANALYSIS=`一句话结论
+本期最值得关注的信号是：联名模块以21条内容贡献58,620点赞、均值2,791，高于新品均值1,981和活动均值1,539，且联名样本全部为爆款；但这是已复核样本内的事实，不能直接推断联名必然比新品或活动更有效。
+
+一、样本与口径
+- 已确认50条内容、9个品牌、18个品牌动作、累计112,970点赞，时间范围2026-08-24至2026-09-21。
+- 模块分布：新品22条/43,580赞，联名21条/58,620赞，活动7条/10,770赞；爆款46条。
+- 可回答：样本内各模块、动作、品牌的内容互动差异，以及周边与钩子的组合特征。
+- 不能回答：销量、市场份额、转化率、投放成本、真实受众画像、平台全量排名；点赞不等于购买或品牌偏好。样本非随机，且来源为“Signal 模拟观察员”，存在演示偏差。
+
+二、营销信号
+1. 联名内容在样本内互动更强，且头部由霸王茶姬×CLOT拉动
+   事实：联名21条、58,620赞、均值2,791、爆款21条；霸王茶姬×CLOT抹茶系列4条、16,160赞、均值4,040，为动作均值最高。
+   推断：联名包材、抽奖、杯套、周边、小程序组合，可能同时提供收藏、晒单和参与动机，推高互动。
+   证据：ACTION-004数据及N010-N013标题“开箱”“小程序活动”“中奖杯周边分享”“三款对比”。
+   置信度：中。样本量小，且该动作点赞集中，不能排除账号或选题本身带来的偏差。
+
+2. 新品是内容量最大的模块，但均值低于联名，内部差异明显
+   事实：新品22条、43,580赞、均值1,981；喜茶多肉芒芒季均值2,637，蜜雪冰城山楂系列2,423，奈雪鲜果茶夏日限定1,147。
+   推断：新品互动更依赖具体产品记忆点与测评/对比内容，单纯“上新”或门店实拍可能偏弱。
+   证据：ACTION-011、ACTION-015、ACTION-018及对应标题。
+   置信度：中。新品样本最多，但各动作仅2-4条，品牌间不可直接比较。
+
+3. 活动模块均值最低，但“打卡+权益/买赠”仍有局部表现
+   事实：活动7条、10,770赞、均值1,539；爷爷不泡茶开学季主题店均值1,457，星巴克星沁爽促销1,795，蜜雪冰城鲜橙季1,405。
+   推断：活动内容若缺少可晒的视觉或强参与机制，互动容易弱于联名和新品。
+   证据：ACTION-002、ACTION-010、ACTION-016及标题“盖章换饮品”“买赠攻略”“门店打卡”。
+   置信度：低。活动仅7条，且爆款5条，波动大。
+
+三、受众与创意机制
+- 可能被内容吸引的需求或参与动机：开箱、测评、对比、打卡、抽奖、买赠、会员权益、周边收集；这些均由标题、周边标签和模块直接支持。具体人群年龄、城市、消费频次待验证。
+- 内容钩子/传播机制：联名多用“开箱+周边+抽奖/小程序”；新品多用“测评+对比+门店打卡”；活动多用“打卡+权益/买赠”。高赞标题集中在“首发”“开箱”“对比”“中奖分享”。
+- 当前样本缺失的关键受众信息：评论原文、用户画像、购买行为、复购、转化路径、账号粉丝量级、投放资源。
+
+四、品牌机会与优先级
+P0 目标：验证联名高互动是否可复制。
+动作：选一个现有IP或文化联名，固定“开箱+周边细节+小程序抽奖”三件套，做2组对照。
+测试内容例子：联名杯套/包材开箱、周边中奖分享、小程序互动任务。
+成功指标：平均点赞、收藏/评论（若可补采）、爆款率。
+验证周期：2周。
+依据：ACTION-004均值4,040，联名整体均值2,791。
+
+P1 目标：提升新品内容的对比与测评密度。
+动作：每个新品动作至少配1条“三款对比”和1条“门店打卡”，减少纯上新稿。
+测试内容例子：芒果茶底对比、山楂气泡测评、青提茉莉第二杯。
+成功指标：新品均值是否从1,981提升，爆款率。
+验证周期：2周。
+依据：喜茶多肉芒芒季均值2,637，奈雪鲜果茶1,147。
+
+P2 目标：把活动从“促销通知”改成“可晒任务”。
+动作：活动内容加入盖章、护照、主题店陈列等可视化任务，并绑定会员权益。
+测试内容例子：开学护照打卡、主题店盖章换饮品。
+成功指标：活动均值、打卡类内容点赞。
+验证周期：2周。
+依据：活动均值1,539，低于联名和新品。
+
+五、风险与下一步
+- 统计和归因风险：样本仅50条、18个动作，非随机；点赞受账号、发布时间、平台推荐影响；不能把高点赞归因于联名或周边本身。
+- 下一轮应补采或人工核验的数据：评论原文与情绪、账号粉丝量、收藏/评论/转发、发布时间分布、是否投放、销量或券核销、受众画像。
+- 给业务负责人的下一步：下周先做P0对照测试，同时补采评论与转化数据；在未验证前，不把“联名一定优于新品”写成结论。`;
+const effectiveAiInsight=()=>state.aiInsight||(state.file==='sample.csv'?DEMO_AI_ANALYSIS:'');
 function readSnapshot(){try{return JSON.parse(localStorage.getItem(REVIEW_KEY)||'null');}catch{return null;}}
 function saveSnapshot(){try{localStorage.setItem(REVIEW_KEY,JSON.stringify({file:state.file,sampleRevision:state.file==='sample.csv'?SAMPLE_REV:'',csv:state.sourceCsv,page:state.page,selected:state.selected,suggested:state.suggested,report:state.report,aiInsight:state.aiInsight,log:state.log,notes:state.notes,captureInbox:state.captureInbox,weekFolders:state.weekFolders,activeFolderId:state.activeFolderId,reviewFilter:state.reviewFilter,folderPage:state.folderPage}));}catch{toast('浏览器存储空间不足，当前页面关闭后可能需要重新复核。');}}
 function clearSnapshot(){try{localStorage.removeItem(REVIEW_KEY);state.captureInbox=[];state.weekFolders=[];state.activeFolderId='';}catch{}}
@@ -75,7 +135,7 @@ function moduleChapter(r,module,index){
   const share=reportPct(top.metrics.likes,summary.likes),brands=new Set(items.map(a=>a.primaryBrand)).size;
   return `<section id="module-${index}" class="report-chapter ${tone}"><div class="chapter-heading"><p class="chapter-index">0${index} · ${module}观察</p><h2>${module==='新品'?`${esc(top.primaryBrand)}「${esc(top.name)}」领跑新品关注` : module==='联名'?`${esc(top.name)}成为本期最受关注的联名动作`:`${esc(top.name)}贡献本期最高活动热度`}</h2></div><div class="chapter-finding"><strong>${summary.noteCount} 篇内容形成 ${items.length} 个动作，累计 ${fmt(summary.likes)} 赞。</strong><p>第一名占本模块点赞的 ${share}%；本期有 ${summary.viralNoteCount} 篇内容达到千赞。</p></div><div class="chapter-grid"><section class="chapter-ranking"><div class="panel-heading"><h3>${module}动作排行</h3><span class="muted">点击查看原始证据</span></div>${items.slice(0,6).map((a,i)=>`<div class="rank-row"><span>${String(i+1).padStart(2,'0')}</span><button class="text-button" data-detail="${a.id}">${esc(a.primaryBrand)} · ${esc(a.name)}</button><div class="rank-track"><span style="width:${a.metrics.likes/top.metrics.likes*100}%"></span></div><strong>${fmt(a.metrics.likes)}</strong></div>`).join('')}</section><aside class="chapter-aside"><p>结构观察</p><h3>${brands} 个品牌参与，平均每篇 ${fmt(Math.round(summary.averageLikes))} 赞</h3><dl><div><dt>动作数量</dt><dd>${items.length}</dd></div><div><dt>千赞内容</dt><dd>${summary.viralNoteCount}</dd></div><div><dt>头部占比</dt><dd>${share}%</dd></div></dl>${section(buckets[0][0],buckets[0][1])}${section(buckets[1][0],tag=>!buckets[0][1].test(tag))}<p class="aside-foot">标签统计来自已确认样本，数字代表提及该标签的动作数。</p></aside></div></section>`;
 }
-function deepSeekPanel(){const configured=!!sessionStorage.getItem(DEEPSEEK_KEY);return `<section class="panel ai-panel"><div class="panel-heading"><div><p class="section-kicker">DEEPSEEK ANALYSIS</p><h2>让模型补充商业判断</h2></div>${badge('固定提示词','gray')}</div><p class="muted">仅发送当前集合的已确认数据。模型固定为 deepseek-flash，分析结果不会修改原始数据。</p><div class="ai-controls"><label>DeepSeek API Key<input id="deepseek-key" type="password" autocomplete="off" placeholder="${configured?'已保存于当前会话，可直接重新分析':'sk-...'}"></label><button class="primary" type="button" data-ai-analyze>${state.aiInsight?'重新生成分析':'生成 AI 分析'}</button></div><small class="muted">Key 仅保存在当前浏览器会话，不写入项目、复核记录或导出文件。</small>${state.aiInsight?`<article class="ai-result"><div class="ai-result-head"><strong>DeepSeek 分析结果</strong><span>基于已复核样本</span></div><div>${esc(state.aiInsight)}</div></article>`:'<div class="ai-empty">填写 API Key 后，生成核心判断、机会方向、风险限制和下一步动作。</div>'}</section>`;}
+function deepSeekPanel(){const configured=!!sessionStorage.getItem(DEEPSEEK_KEY),insight=effectiveAiInsight(),demo=!state.aiInsight;return `<section class="panel ai-panel"><div class="panel-heading"><div><p class="section-kicker">DEEPSEEK ANALYSIS</p><h2>让模型补充商业判断</h2></div>${badge('固定提示词','gray')}</div><p class="muted">仅发送当前集合的已确认数据。模型固定为 deepseek-flash，分析结果不会修改原始数据。</p><div class="ai-controls"><label>DeepSeek API Key<input id="deepseek-key" type="password" autocomplete="off" placeholder="${configured?'已保存于当前会话，可直接重新分析':'sk-...'}"></label><button class="primary" type="button" data-ai-analyze>${state.aiInsight?'重新生成分析':'生成 AI 分析'}</button></div><small class="muted">Key 仅保存在当前浏览器会话，不写入项目、复核记录或导出文件。下方样例仅用于演示，新生成的分析会覆盖它。</small>${insight?`<details class="ai-result"><summary><strong>${demo?'演示分析样例':'DeepSeek 分析结果'}</strong><span>${demo?'未调用模型 · 点击展开':'基于已复核样本 · 点击展开'}</span></summary><div class="ai-result-body">${esc(insight)}</div></details>`:'<div class="ai-empty">填写 API Key 后，生成核心判断、机会方向、风险限制和下一步动作。</div>'}</section>`;}
 function report(){if(!state.report)return heading('SIGNAL / REPORT','一份报告，从可信的样本开始。','先完成复核，再让统计和结论一起形成。')+`<section class="empty"><p class="eyebrow">READY WHEN YOU ARE</p><h2>报告等待生成</h2><p>${state.suggested?`还有 ${outstanding().length} 篇待复核，${approved().length} 篇已确认。`:'请先生成建议并确认内容。'}</p><button class="primary" data-go="review">前往复核台 →</button></section>`;
 const r=state.report,sum=r.summary,top=r.brandActions[0],folder=r.notes.find(n=>n.weekLabel)?.weekLabel||currentFolderLabel(),actions=r.brandActions.filter(a=>(!state.filter||a.modules.includes(state.filter))&&`${a.name} ${a.primaryBrand}`.toLowerCase().includes(state.search.toLowerCase())),sources=new Set(r.notes.map(n=>n.source.accountName).filter(Boolean)).size,brands=new Set(r.notes.map(n=>n.brand)).size,strongest=MODULES.map(m=>[m,sum.moduleSummary[m]]).sort((a,b)=>b[1].likes-a[1].likes)[0],topFiveShare=reportPct(r.brandActions.slice(0,5).reduce((n,a)=>n+a.metrics.likes,0),sum.likes),topSummary=r.brandActions.length>5?`前五名集中 ${topFiveShare}% 点赞`:`${r.brandActions.length} 个已确认动作的热度分布`,insights=[`${top.primaryBrand}「${top.name}」以 ${fmt(top.metrics.likes)} 赞领跑，占本期点赞 ${reportPct(top.metrics.likes,sum.likes)}%。`,`${strongest[0]}是本期热度最高的观察模块，累计 ${fmt(strongest[1].likes)} 赞。`,`${sum.viralNoteCount} 篇内容达到千赞，占已确认内容 ${reportPct(sum.viralNoteCount,sum.noteCount)}%。`,`${sum.noteCount} 篇样本来自 ${sources} 个账号，适合判断内容信号，不代表销量或全平台份额。`];return heading('SIGNAL / REPORT','饮品行业观察',`${folder?`集合：${esc(folder)} · `:''}${reportPeriod(r.notes)} · 已复核快照`,`<button class="secondary" data-export="csv">导出明细 ↓</button><button class="primary" data-export="docx">下载 Word 报告 ↓</button>`)+
 `<section class="report-intro"><div class="report-intro-title"><p>本期执行摘要</p><h2>从 ${sum.noteCount} 篇内容中，找到值得继续追踪的品牌动作。</h2><div class="report-scope"><span>${brands} 个品牌</span><span>${sources} 个账号</span><span>${r.brandActions.length} 个动作</span><span>${fmt(sum.likes)} 累计赞</span></div></div><div class="report-findings">${insights.map((text,i)=>`<article><b>${String(i+1).padStart(2,'0')}</b><p>${esc(text)}</p></article>`).join('')}</div></section>
@@ -134,7 +194,7 @@ function toggleLock(){const n=state.notes[state.selected];if(!n||n.status==='pen
 async function publish(){if(!state.suggested||outstanding().length||!approved().length)return toast('请先处理当前集合内的全部帖子，并锁定所有复核结果。');const response=await fetch('/api/report',{method:'POST',body:Papa.unparse(makeExportRows(scopedNotes()))});const data=await response.json();if(!response.ok)throw Error(data.error);state.report=data;state.aiInsight='';state.log.push(`${new Date().toLocaleTimeString()} · 生成报告：${data.notes.length} 篇内容，${data.brandActions.length} 个动作`);saveSnapshot();go('report');toast('报告已生成，所有数字均来自当前集合的已确认内容。');}
 function detail(id){const a=state.report.brandActions.find(a=>a.id===id);if(!a)return;$('#detail-content').innerHTML=`<p class="eyebrow">ACTION / EVIDENCE</p><h2>${esc(a.primaryBrand)} · ${esc(a.name)}</h2><p class="muted">${a.metrics.noteCount} 篇内容 · ${fmt(a.metrics.likes)} 赞</p>${a.noteIds.map(id=>{const n=state.notes.find(n=>n.note_id===id);return `<article><h3>${esc(n.title)}</h3><p>${esc(n.body||'未提供正文')}</p><p>${esc(n.source_account)} · ${fmt(n.likes)} 赞 · 发布 ${esc(n.published_date)}</p><p class="muted">点赞截点 ${esc(n.likes_captured_at)}</p><p>复核说明：${esc(n.reason||'已核对分类和动作归并')}</p>${n.url?`<a href="${esc(n.url)}" target="_blank" rel="noopener noreferrer">查看来源 ↗</a>`:'<small class="muted">该示例无真实帖子链接。</small>'}</article>`;}).join('')}`;$('#detail').showModal();}
 async function analyzeWithDeepSeek(){if(!state.report)return;const input=$('#deepseek-key'),apiKey=String(input?.value||sessionStorage.getItem(DEEPSEEK_KEY)||'').trim();if(!apiKey)return toast('请先填写 DeepSeek API Key。');sessionStorage.setItem(DEEPSEEK_KEY,apiKey);const button=$('[data-ai-analyze]');button.disabled=true;button.textContent='分析中…';try{const notes=approved().map(n=>({title:n.title,brand:n.brand,action:n.action,modules:n.modules,peripherals:n.peripherals,likes:Number(n.likes)||0,published_date:n.published_date,source_account:n.source_account,review_reason:n.reason})),report={summary:state.report.summary,brandActions:state.report.brandActions};const response=await fetch('/api/ai/analyze',{method:'POST',headers:{'Content-Type':'application/json','X-DeepSeek-Key':apiKey},body:JSON.stringify({report,notes})});const data=await response.json().catch(()=>({}));if(!response.ok)throw Error(data.error||'DeepSeek 分析失败');state.aiInsight=data.analysis;state.log.push(`${new Date().toLocaleTimeString()} · DeepSeek 生成报告辅助分析`);saveSnapshot();render();toast('DeepSeek 分析已生成。');}finally{if(button.isConnected){button.disabled=false;button.textContent='生成 AI 分析';}}}
-async function download(type){if(!state.report)return;if(type==='docx'){const response=await fetch('/api/report.docx',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({report:state.report,notes:approved(),aiInsight:state.aiInsight,log:state.log})});if(!response.ok){const data=await response.json().catch(()=>({}));throw Error(data.error||'Word 报告生成失败');}const blob=await response.blob();const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='signal-report.docx';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Word 报告已下载。');return;}const content=type==='json'?JSON.stringify({...state.report,reviewHistory:state.log},null,2):'\uFEFF'+Papa.unparse(makeExportRows(state.notes),{escapeFormulae:true});const url=URL.createObjectURL(new Blob([content],{type:type==='json'?'application/json;charset=utf-8':'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=`signal-demo.${type}`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('已导出本次复核结果。');}
+async function download(type){if(!state.report)return;if(type==='docx'){const response=await fetch('/api/report.docx',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({report:state.report,notes:approved(),aiInsight:effectiveAiInsight(),log:state.log})});if(!response.ok){const data=await response.json().catch(()=>({}));throw Error(data.error||'Word 报告生成失败');}const blob=await response.blob();const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='signal-report.docx';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Word 报告已下载。');return;}const content=type==='json'?JSON.stringify({...state.report,reviewHistory:state.log},null,2):'\uFEFF'+Papa.unparse(makeExportRows(state.notes),{escapeFormulae:true});const url=URL.createObjectURL(new Blob([content],{type:type==='json'?'application/json;charset=utf-8':'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=`signal-demo.${type}`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('已导出本次复核结果。');}
 document.addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;try{if(b.dataset.page)go(b.dataset.page);if(b.dataset.go)go(b.dataset.go);if(b.dataset.reviewFilter){state.reviewFilter=b.dataset.reviewFilter;saveSnapshot();render();return;}if(b.dataset.folderAction==='create')createFolder($('#folder-date')?.value,$('#folder-name')?.value);if(b.dataset.folderAction==='rename')renameFolder($('#folder-rename')?.value);if(b.hasAttribute('data-run'))run();if(b.hasAttribute('data-bulk-confirm'))confirmAll();if(b.hasAttribute('data-select')){state.selected=Number(b.dataset.select);saveSnapshot();render();}if(b.hasAttribute('data-toggle-lock'))toggleLock();if(b.hasAttribute('data-exclude'))saveReview(true);if(b.hasAttribute('data-publish'))await publish();if(b.hasAttribute('data-ai-analyze'))await analyzeWithDeepSeek();if(b.dataset.detail)detail(b.dataset.detail);if(b.dataset.export)download(b.dataset.export);if(b.id==='reset'&&confirm('重置会清空本次复核记录，恢复示例。继续吗？')){clearSnapshot();await loadCSV(await(await fetch('/sample.csv?v=50')).text(),'sample.csv');go('overview');}}catch(error){toast(error.message);}});
 document.addEventListener('submit',e=>{if(e.target.id==='review-form'){e.preventDefault();saveReview();}});
 document.addEventListener('change',async e=>{if(e.target.id==='upload'){const f=e.target.files[0];if(!f)return;try{if(f.size>10*1024*1024)throw Error('请使用小于 10 MB 的 CSV。');if(state.suggested&&!confirm('导入将替换当前内容和复核记录，继续吗？'))return;await loadCSV(await f.text(),f.name);render();toast('导入成功。点击生成建议开始分析。');}catch(error){state.error=error.message;render();}}if(e.target.id==='module-filter'){state.filter=e.target.value;render();}if(e.target.id==='folder-dashboard-select'||e.target.id==='folder-review-select'){state.activeFolderId=e.target.value;const first=state.notes.findIndex(n=>inScope(n));if(first>=0)state.selected=first;saveSnapshot();render();}});
