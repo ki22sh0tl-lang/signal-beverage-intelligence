@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: signal-drink-radar
+    name: signal-beverage-intelligence
     runtime: node
     plan: free
     buildCommand: npm ci

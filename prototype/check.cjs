@@ -2,7 +2,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const Papa=require('papaparse');
 const {suggest,makeExportRows}=require('./app.js');
-const {convert}=require('../tools/import-radar.cjs');
+const {convert}=require('../tools/import-beverage-data.cjs');
 const notes=Papa.parse(fs.readFileSync(__dirname+'/sample.csv','utf8'),{header:true,skipEmptyLines:true}).data.map(suggest);
 assert.equal(notes.length,50);
 assert.equal(notes.filter(n=>n.uncertain).length,0,'Bundled benchmark rows carry explicit modules and action names');

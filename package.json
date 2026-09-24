@@ -1,14 +1,14 @@
 {
-  "name": "drink-radar-data-kit",
+  "name": "signal-beverage-intelligence",
   "version": "0.1.0",
   "private": true,
-  "description": "Minimal CSV to brand-action radar data pipeline",
+  "description": "CSV to beverage market intelligence pipeline",
   "scripts": {
     "start": "node prototype/server.cjs",
-    "import": "node tools/import-radar.cjs",
+    "import": "node tools/import-beverage-data.cjs",
     "check": "node tools/check.cjs",
     "check:ui": "node prototype/extractor-check.cjs && node prototype/browser-check.cjs",
-    "demo": "node tools/import-radar.cjs examples/notes.csv output/report.json"
+    "demo": "node tools/import-beverage-data.cjs examples/notes.csv output/report.json"
   },
   "dependencies": {
     "docx": "^9.7.1",

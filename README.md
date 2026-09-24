@@ -1,6 +1,6 @@
-# 饮品热点雷达研究与数据工具
+# Signal 饮品行业情报工作台
 
-先读 [网站分析与复刻方案.md](网站分析与复刻方案.md)。evidence/ 保存参考网站公开资源和提取的元信息，仅用于研究，不作为本站可再分发资产。
+项目背景与参考网站分析见 [行业情报工作台研究笔记](industry-research-notes.md)。evidence/ 保存参考网站公开资源和提取的元信息，仅用于研究，不作为本站可再分发资产。
 
 已安装 GitHub 开源项目 [PapaParse](https://github.com/mholt/PapaParse) 的 npm 包。工具生成我们自己的精简数据结构，不直接兼容参考站完整 schema。
 

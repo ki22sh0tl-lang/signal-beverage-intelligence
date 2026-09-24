@@ -1,6 +1,6 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
-const { convert } = require('./import-radar.cjs');
+const { convert } = require('./import-beverage-data.cjs');
 const csv = fs.readFileSync('examples/notes.csv', 'utf8');
 const d = convert(csv);
 assert.equal(d.summary.likes, 2300);

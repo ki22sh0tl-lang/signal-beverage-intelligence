@@ -1,4 +1,4 @@
-# 饮品热点雷达：源码分析与复刻方案
+# 饮品行业情报工作台：参考网站分析与实现方案
 
 检查日期：2026-09-17。对象：https://valuerdrink.netlify.app/?module=联名&tag=peripheral:玩偶
 
@@ -35,7 +35,7 @@ HTML 依次加载数据、导出工具、应用脚本。数据声明为 `window.
 数据的 `meta.source` 记录：
 
 ```text
-workbook: 02_数据处理/饮品热点雷达_分析标签大宽表_2026W32.xlsx
+workbook: 02_数据处理/行业分析标签大宽表_2026W32.xlsx
 worksheet: 分析标签大宽表
 headerRow: 4
 ```
@@ -137,7 +137,7 @@ URL 参数用于保存状态：`action`、`brand`、`module`、`hit`、`q`、`ta
 
 ## 7. 已落地的最小改造
 
-`tools/import-radar.cjs` 接受统一格式的 UTF-8 CSV，输出 JSON：
+`tools/import-beverage-data.cjs` 接受统一格式的 UTF-8 CSV，输出 JSON：
 
 - 校验必需列、非负整数点赞、合法日期、带时区的指标截点、模块与链接协议。
 - 重复帖子 ID 直接报错，防止无声重复统计。
@@ -147,7 +147,7 @@ URL 参数用于保存状态：`action`、`brand`、`module`、`hit`、`q`、`ta
 
 `examples/notes.csv` 全部为明确虚构的示例。运行 `rtk npm run demo` 可以看到三篇示例帖子归并成两个动作，共 2,300 赞。`rtk npm run check` 已通过归并、多标签重叠统计、CSV 引用、重复 ID、非法日期、非法点赞和动作冲突检查。
 
-工具使用我们自己的 `radar-kit-0.1` 精简 schema，不是原站完整 schema，也不能直接替换原站 report-data.js。它没有采集小红书、生成 AI 结论、直接读取 XLSX 或提供成品网页；Excel 首先另存为 CSV UTF-8。这是把最重要的数据路径做成可执行基础，而非声称整站已经完成。
+工具使用我们自己的 `signal-kit-0.1` 精简 schema，不是原站完整 schema，也不能直接替换原站 report-data.js。它没有采集小红书、生成 AI 结论、直接读取 XLSX 或提供成品网页；Excel 首先另存为 CSV UTF-8。这是把最重要的数据路径做成可执行基础，而非声称整站已经完成。
 
 ## 8. 如果复刻，我们实际需要做什么
 

@@ -6,9 +6,9 @@
   "status": "pass",
   "visualReview": "pending",
   "artifact": {
-    "path": "C:\\Users\\Ashone\\Documents\\ChatGPT\\热点雷达\\热点雷达-FDE架构图.html",
-    "sha256": "f81924c9798feb5fba2d0865d456b91462f654caac2cc6b9de4a60abe8e7888c",
-    "bytes": 816189
+    "path": "signal-fde-architecture.html",
+    "sha256": "03b48bc2c77eb0011b2eb2f48619365f834be5fbadedb329ca227f7b1ae51d8f",
+    "bytes": 816159
   },
   "state": {
     "detail": "read",
@@ -440,7 +440,7 @@
         "viewerChromeActive": true,
         "viewerChromeOk": true,
         "resolvedTheme": "light",
-        "file": "热点雷达-FDE架构图.visual-check.1440x900.light.png"
+        "file": "signal-fde-architecture.visual-check.1440x900.light.png"
       },
       {
         "width": 1440,
@@ -472,7 +472,7 @@
         "viewerChromeActive": true,
         "viewerChromeOk": true,
         "resolvedTheme": "dark",
-        "file": "热点雷达-FDE架构图.visual-check.1440x900.dark.png"
+        "file": "signal-fde-architecture.visual-check.1440x900.dark.png"
       },
       {
         "width": 2048,
@@ -504,7 +504,7 @@
         "viewerChromeActive": true,
         "viewerChromeOk": true,
         "resolvedTheme": "light",
-        "file": "热点雷达-FDE架构图.visual-check.2048x1320.light.png"
+        "file": "signal-fde-architecture.visual-check.2048x1320.light.png"
       },
       {
         "width": 2048,
@@ -536,13 +536,13 @@
         "viewerChromeActive": true,
         "viewerChromeOk": true,
         "resolvedTheme": "dark",
-        "file": "热点雷达-FDE架构图.visual-check.2048x1320.dark.png"
+        "file": "signal-fde-architecture.visual-check.2048x1320.dark.png"
       }
     ],
-    "contactSheet": "热点雷达-FDE架构图.visual-check.html"
+    "contactSheet": "signal-fde-architecture.visual-check.html"
   },
   "sidecars": {
-    "receipt": "热点雷达-FDE架构图.visual-check.json",
-    "contactSheet": "热点雷达-FDE架构图.visual-check.html"
+    "receipt": "signal-fde-architecture.visual-check.json",
+    "contactSheet": "signal-fde-architecture.visual-check.html"
   }
 }
