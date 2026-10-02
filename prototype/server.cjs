@@ -57,9 +57,11 @@ const DEEPSEEK_PROMPT = `你是一名饮品行业的营销策略、社媒洞察�
 写作风格：像一页给品牌市场负责人的周报，先给判断，再给证据和动作；少用“加强、提升、优化”这类空话，动作要能在下周执行。`;
 let captureSequence = 0;
 const captureQueue = [];
-const files = { '/app': ['index.html','text/html'], '/app/': ['index.html','text/html'], '/privacy': ['privacy.html','text/html'], '/landing.css':['landing.css','text/css'], '/landing-nebula.js':['landing-nebula.js','text/javascript'], '/motion.css':['motion.css','text/css'], '/app.js':['app.js','text/javascript'], '/style.css':['style.css','text/css'], '/sample.csv':['sample.csv','text/csv'], '/signal-collector-extension.zip':['signal-collector-extension.zip','application/zip'], '/papa.js':['../node_modules/papaparse/papaparse.min.js','text/javascript'] };
+const files = { '/app': ['index.html','text/html'], '/app/': ['index.html','text/html'], '/privacy': ['privacy.html','text/html'], '/landing.css':['landing.css','text/css'], '/console.css':['console.css','text/css'], '/landing-nebula.js':['landing-nebula.js','text/javascript'], '/motion.css':['motion.css','text/css'], '/app.js':['app.js','text/javascript'], '/style.css':['style.css','text/css'], '/sample.csv':['sample.csv','text/csv'], '/signal-collector-extension.zip':['signal-collector-extension.zip','application/zip'], '/papa.js':['../node_modules/papaparse/papaparse.min.js','text/javascript'] };
 files['/collector.js']=['collector.js','text/javascript'];
 files['/collector.css']=['collector.css','text/css'];
+files['/report-preview.png']=['report-preview.png','image/png'];
+files['/favicon.svg']=['favicon.svg','image/svg+xml'];
 http.createServer(async (req,res) => {
   const send = (status, type, body, headers = {}) => { res.writeHead(status, {'Content-Type':type,'X-Content-Type-Options':'nosniff','Cache-Control':'no-store',...headers}); res.end(body); };
   const siteOrigin = () => `${String(req.headers['x-forwarded-proto'] || 'http').split(',')[0]}://${req.headers.host}`;
