@@ -6,17 +6,15 @@
 
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let width = 0, height = 0, frame = 0, visible = true, points = [], lastPaint = 0;
+  let centerX = 0, centerY = 0, radius = 0;
   const pointer = { x: 0, y: 0, targetX: 0, targetY: 0 };
   const tau = Math.PI * 2;
 
   function paint(time) {
-    const mobile = width <= 760;
     pointer.x += (pointer.targetX - pointer.x) * .035;
     pointer.y += (pointer.targetY - pointer.y) * .035;
-    const radius = Math.min(width * (mobile ? .34 : .16), mobile ? 190 : 250);
-    const cx = width * (mobile ? .5 : .78) + pointer.x;
-    const copy = hero.querySelector('.hero-copy');
-    const cy = mobile ? copy.offsetTop + copy.offsetHeight + 145 : 220;
+    const cx = centerX + pointer.x;
+    const cy = centerY + pointer.y;
     const turn = time * .00013;
     ctx.clearRect(0, 0, width, height);
     for (const p of points) {
@@ -30,10 +28,10 @@
       const rotatedY = y * .64 - z * .76;
       const depth = y * .76 + z * .64;
       const perspective = 1 + depth / (radius * 9);
-      const alpha = .16 + (depth / radius + 1) * .32;
+      const alpha = (.16 + (depth / radius + 1) * .32) * .55;
       ctx.fillStyle = p.silver ? `rgba(201,214,227,${alpha * .6})` : `rgba(234,208,120,${alpha})`;
       ctx.beginPath();
-      ctx.arc(cx + x * perspective, cy + rotatedY * perspective + pointer.y, p.size * perspective, 0, tau);
+      ctx.arc(cx + x * perspective, cy + rotatedY * perspective, p.size * perspective, 0, tau);
       ctx.fill();
     }
   }
@@ -54,6 +52,10 @@
   function resize() {
     const box = hero.getBoundingClientRect();
     width = box.width; height = box.height;
+    const stage = hero.querySelector('.nebula-stage').getBoundingClientRect();
+    centerX = stage.left - box.left + stage.width / 2;
+    centerY = stage.top - box.top + stage.height / 2;
+    radius = Math.min(stage.width * .72, 370);
     const dpr = Math.min(devicePixelRatio || 1, 1.5);
     canvas.width = Math.round(width * dpr);
     canvas.height = Math.round(height * dpr);
